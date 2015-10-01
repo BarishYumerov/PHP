@@ -35,13 +35,28 @@ class CategoriesRepository
         return self::$inst;
     }
 
-    public static function add(){
+    public function add(Category $category)
+    {
+        $query = "Select id, name
+        FROM categories WHERE name = ?";
+        $this->db->query($query, [$category->getName()]);
+        $result = $this->db->row();
 
+        if($result){
+            echo 'The category with this name exists!';
+            die;
+        }
+
+        $query = "INSERT INTO categories (name)
+            VALUES (?)";
+        $this->db->query($query, [$category->getName()]);
+        $result = $this->db->row();
+
+        return $result;
     }
 
     public function edit(Category $category)
     {
-        var_dump($category);
         $query = "Select id, name
         FROM categories WHERE id = ?";
         $this->db->query($query, [$category->getId()]);
@@ -58,7 +73,7 @@ class CategoriesRepository
         $result = $this->db->row();
 
         if($result){
-            echo 'The category exists!';
+            echo 'The category with this name exists!';
             die;
         }
 

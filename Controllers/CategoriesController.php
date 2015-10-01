@@ -27,4 +27,16 @@ class CategoriesController extends BaseController
             CategoriesRepository::create()->edit($category);
         }
     }
+
+    function add(){
+        if(isset($_POST['add'])){
+            if($_POST['categoryName'] == null){
+                echo 'Enter name!';
+                die;
+            }
+
+            $category = new Category($_POST['categoryName']);
+            CategoriesRepository::create()->add($category);
+        }
+    }
 }

@@ -28,8 +28,13 @@ class Category
         return $this->name;
     }
 
-    public function setName($username)
+    public function setName($name)
     {
-        $this->name = $username;
+        if(strlen($name) < 2){
+            echo 'Too short Name';
+            die;
+        }
+
+        $this->name = $name;
     }
 }
