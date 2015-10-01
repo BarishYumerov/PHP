@@ -35,7 +35,6 @@ class HomeController extends BaseController
             session_destroy();
             $this->redirect('home', 'guestHome');
         }
-
         $this->view->partial('authHeader');
     }
 
@@ -44,7 +43,6 @@ class HomeController extends BaseController
             $this->redirect('home', 'userHome');
             exit;
         }
-
         $this->view->partial('guestHeader');
     }
 

@@ -31,7 +31,8 @@ try {
     $controllerInstance = new $controllerName(
         $view,
         $requestObject,
-        $controller
+        $controller,
+        $parameters
     );
 } catch (\Exception $e) {
     echo "No such controller";

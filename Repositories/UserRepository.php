@@ -45,7 +45,7 @@ class UserRepository
     }
 
     public function loginCheck($username, $passwordHash){
-        $query = "SELECT id, username, password, email
+        $query = "SELECT id, username, password, email, cash, roleId
         FROM users WHERE username = ? && password = ?";
         $this->db->query($query, [$username, $passwordHash]);
         $result = $this->db->row();

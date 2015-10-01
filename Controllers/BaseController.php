@@ -9,16 +9,19 @@ class BaseController
     protected $view;
     protected $request;
     protected $controllerName;
+    protected $parameters;
 
     public function __construct(
         View $view,
         Request $request,
-        $name
+        $name,
+        $parameters
     )
     {
         $this->view = $view;
         $this->request = $request;
         $this->controllerName = $name;
+        $this->parameters = $parameters;
         $this->onLoad();
     }
 

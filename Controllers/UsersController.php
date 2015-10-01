@@ -74,7 +74,8 @@ class UsersController extends BaseController
                 $_SESSION['userId'] = $info['id'];
                 $_SESSION['username'] = $info['username'];
                 $_SESSION['email'] = $info['email'];
-
+                $_SESSION['roleId'] = $info['roleId'];
+                $_SESSION['cash'] = $info['cash'];
                 $this->redirect('home', 'userHome');
             }
             echo 'Invalid details';
