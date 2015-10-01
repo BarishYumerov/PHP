@@ -10,6 +10,7 @@ class Category
     public function __construct($name, $id = null)
     {
         $this->setName($name);
+        $this->setId($id);
     }
 
     public function getId()

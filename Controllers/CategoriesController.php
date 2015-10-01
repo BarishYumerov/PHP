@@ -3,6 +3,7 @@
 namespace Controllers;
 
 use Repositories\CategoriesRepository;
+use Models\Category;
 
 class CategoriesController extends BaseController
 {
@@ -22,8 +23,8 @@ class CategoriesController extends BaseController
                 echo 'Enter name!';
                 die;
             }
-
-            CategoriesRepository::create()->edit($this->parameters[0], $_POST['categoryName']);
+            $category = new Category($_POST['categoryName'], $this->parameters[0]);
+            CategoriesRepository::create()->edit($category);
         }
     }
 }

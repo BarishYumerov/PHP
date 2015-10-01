@@ -4,6 +4,7 @@ namespace Repositories;
 
 use Db;
 use Configs\DbConfig;
+use Models\Category;
 
 class CategoriesRepository
 {
@@ -34,11 +35,16 @@ class CategoriesRepository
         return self::$inst;
     }
 
-    public function edit($id, $newName)
+    public static function add(){
+
+    }
+
+    public function edit(Category $category)
     {
+        var_dump($category);
         $query = "Select id, name
         FROM categories WHERE id = ?";
-        $this->db->query($query, [$id]);
+        $this->db->query($query, [$category->getId()]);
         $result = $this->db->row();
 
         if(!$result){
@@ -48,7 +54,7 @@ class CategoriesRepository
 
         $query = "Select id, name
         FROM categories WHERE name = ?";
-        $this->db->query($query, [$newName]);
+        $this->db->query($query, [$category->getName()]);
         $result = $this->db->row();
 
         if($result){
@@ -58,7 +64,7 @@ class CategoriesRepository
 
         $query = "Update categories SET name = ?
         WHERE id = ?";
-        $this->db->query($query, [$newName, $id]);
+        $this->db->query($query, [$category->getName(), $category->getId()]);
         $result = $this->db->row();
 
         return $result;
