@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8cc37d93-2586-4e5f-9ddf-e5ad72222143" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Views/products/edit.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Models/Product.php" afterPath="$PROJECT_DIR$/Models/Product.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Repositories/ProductRepository.php" afterPath="$PROJECT_DIR$/Repositories/ProductRepository.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Controllers/CategoriesController.php" afterPath="$PROJECT_DIR$/Controllers/CategoriesController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Controllers/ProductsController.php" afterPath="$PROJECT_DIR$/Controllers/ProductsController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="PHP.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -28,11 +25,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="ProductsController.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ProductsController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Controllers/ProductsController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.106884055">
-              <caret line="39" column="8" selection-start-line="39" selection-start-column="8" selection-end-line="39" selection-end-column="8" />
+            <state vertical-scroll-proportion="-6.018182">
+              <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
               <folding>
                 <element signature="e#31#69#0#PHP" expanded="true" />
               </folding>
@@ -43,8 +40,8 @@
       <file leaf-file-name="ProductRepository.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Repositories/ProductRepository.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-4.890909">
-              <caret line="60" column="36" selection-start-line="60" selection-start-column="36" selection-end-line="60" selection-end-column="36" />
+            <state vertical-scroll-proportion="-6.9454546">
+              <caret line="57" column="32" selection-start-line="57" selection-start-column="32" selection-end-line="57" selection-end-column="32" />
               <folding>
                 <element signature="e#32#39#0#PHP" expanded="true" />
                 <marker date="1443731177911" expanded="true" signature="702:803" placeholder="INSERT INTO ..." />
@@ -54,6 +51,16 @@
                 <marker date="1443731177911" expanded="true" signature="1705:1735" placeholder="Select * FRO..products..." />
                 <marker date="1443731177911" expanded="true" signature="1899:1951" placeholder="Select * FRO..products..." />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="View.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/View.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -81,7 +88,7 @@
       <file leaf-file-name="CategoriesRepository.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Repositories/CategoriesRepository.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-5.8846154">
+            <state vertical-scroll-proportion="-3.9230769">
               <caret line="63" column="0" selection-start-line="63" selection-start-column="0" selection-end-line="63" selection-end-column="0" />
               <folding>
                 <element signature="e#32#39#0#PHP" expanded="true" />
@@ -93,6 +100,18 @@
                 <marker date="1443723034945" expanded="true" signature="1766:1817" placeholder="Update categ..." />
                 <marker date="1443723034945" expanded="true" signature="1787:1817" placeholder="Select id, n..categories..." />
                 <marker date="1443723034945" expanded="true" signature="2014:2053" placeholder="Select id, n..categories..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CategoriesController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Controllers/CategoriesController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-19.423077">
+              <caret line="41" column="48" selection-start-line="41" selection-start-column="48" selection-end-line="41" selection-end-column="48" />
+              <folding>
+                <element signature="e#31#69#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -127,12 +146,12 @@
         <option value="$PROJECT_DIR$/Views/categories/add.php" />
         <option value="$PROJECT_DIR$/Models/Category.php" />
         <option value="$PROJECT_DIR$/Repositories/CategoriesRepository.php" />
-        <option value="$PROJECT_DIR$/Controllers/CategoriesController.php" />
         <option value="$PROJECT_DIR$/Views/products/add.php" />
         <option value="$PROJECT_DIR$/Views/products/edit.php" />
         <option value="$PROJECT_DIR$/Repositories/ProductRepository.php" />
         <option value="$PROJECT_DIR$/Models/Product.php" />
         <option value="$PROJECT_DIR$/Controllers/ProductsController.php" />
+        <option value="$PROJECT_DIR$/Controllers/CategoriesController.php" />
       </list>
     </option>
   </component>
@@ -519,16 +538,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Controllers/CategoriesController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-19.73077">
-          <caret line="40" column="5" selection-start-line="40" selection-start-column="5" selection-end-line="40" selection-end-column="5" />
-          <folding>
-            <element signature="e#31#69#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Repositories/UserRepository.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-3.2692308">
@@ -560,37 +569,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/View.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Views/products/add.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.0">
           <caret line="0" column="22" selection-start-line="0" selection-start-column="21" selection-end-line="0" selection-end-column="22" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Repositories/CategoriesRepository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.8846154">
-          <caret line="63" column="0" selection-start-line="63" selection-start-column="0" selection-end-line="63" selection-end-column="0" />
-          <folding>
-            <element signature="e#32#39#0#PHP" expanded="true" />
-            <marker date="1443723034945" expanded="true" signature="713:767" placeholder="Select id, n..categories..." />
-            <marker date="1443723034945" expanded="true" signature="988:1040" placeholder="Update categ..." />
-            <marker date="1443723034945" expanded="true" signature="1238:1290" placeholder="Select id, n..categories..." />
-            <marker date="1443723034945" expanded="true" signature="1244:1290" placeholder="SELECT id, u..users..." />
-            <marker date="1443723034945" expanded="true" signature="1491:1545" placeholder="Select id, n..categories..." />
-            <marker date="1443723034945" expanded="true" signature="1766:1817" placeholder="Update categ..." />
-            <marker date="1443723034945" expanded="true" signature="1787:1817" placeholder="Select id, n..categories..." />
-            <marker date="1443723034945" expanded="true" signature="2014:2053" placeholder="Select id, n..categories..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -610,10 +593,48 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Controllers/ProductsController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.018182">
+          <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+          <folding>
+            <element signature="e#31#69#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Repositories/CategoriesRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.9230769">
+          <caret line="63" column="0" selection-start-line="63" selection-start-column="0" selection-end-line="63" selection-end-column="0" />
+          <folding>
+            <element signature="e#32#39#0#PHP" expanded="true" />
+            <marker date="1443723034945" expanded="true" signature="713:767" placeholder="Select id, n..categories..." />
+            <marker date="1443723034945" expanded="true" signature="988:1040" placeholder="Update categ..." />
+            <marker date="1443723034945" expanded="true" signature="1238:1290" placeholder="Select id, n..categories..." />
+            <marker date="1443723034945" expanded="true" signature="1244:1290" placeholder="SELECT id, u..users..." />
+            <marker date="1443723034945" expanded="true" signature="1491:1545" placeholder="Select id, n..categories..." />
+            <marker date="1443723034945" expanded="true" signature="1766:1817" placeholder="Update categ..." />
+            <marker date="1443723034945" expanded="true" signature="1787:1817" placeholder="Select id, n..categories..." />
+            <marker date="1443723034945" expanded="true" signature="2014:2053" placeholder="Select id, n..categories..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Controllers/CategoriesController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-19.423077">
+          <caret line="41" column="48" selection-start-line="41" selection-start-column="48" selection-end-line="41" selection-end-column="48" />
+          <folding>
+            <element signature="e#31#69#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Repositories/ProductRepository.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.890909">
-          <caret line="60" column="36" selection-start-line="60" selection-start-column="36" selection-end-line="60" selection-end-column="36" />
+        <state vertical-scroll-proportion="-6.9454546">
+          <caret line="57" column="32" selection-start-line="57" selection-start-column="32" selection-end-line="57" selection-end-column="32" />
           <folding>
             <element signature="e#32#39#0#PHP" expanded="true" />
             <marker date="1443731177911" expanded="true" signature="702:803" placeholder="INSERT INTO ..." />
@@ -626,13 +647,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Controllers/ProductsController.php">
+    <entry file="file://$PROJECT_DIR$/View.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.106884055">
-          <caret line="39" column="8" selection-start-line="39" selection-start-column="8" selection-end-line="39" selection-end-column="8" />
-          <folding>
-            <element signature="e#31#69#0#PHP" expanded="true" />
-          </folding>
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>

@@ -25,6 +25,8 @@ class CategoriesController extends BaseController
             }
             $category = new Category($_POST['categoryName'], $this->parameters[0]);
             CategoriesRepository::create()->edit($category);
+            $this->redirect('home', 'userHome');
+
         }
     }
 
@@ -37,6 +39,7 @@ class CategoriesController extends BaseController
 
             $category = new Category($_POST['categoryName']);
             CategoriesRepository::create()->add($category);
+            $this->redirect('home', 'userHome');
         }
     }
 }

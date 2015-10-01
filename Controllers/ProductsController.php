@@ -31,13 +31,15 @@ class ProductsController extends BaseController
             $product = new Product($name, $categoryId, $price, $quantity, $editorID);
             var_dump($product);
             ProductRepository::create()->add($product);
+            $this->redirect('home', 'userHome');
+
         }
     }
 
     public function edit(){
         $_SESSION['categories'] = CategoriesRepository::create()->getAll();
         $_SESSION['product'] = ProductRepository::create()->getProduct($this->parameters[0]);
-        
+
         if($_SESSION['userId'] != $_SESSION['product']['editorId']){
             echo 'You are not the editor of the product!';
             die;
@@ -54,6 +56,8 @@ class ProductsController extends BaseController
             $this->checkIfExist($name);
             $product = new Product($name, $categoryId, $price, $quantity, $editorID, $id);
             ProductRepository::create()->edit($product);
+
+            $this->redirect('home', 'userHome');
         }
     }
 
