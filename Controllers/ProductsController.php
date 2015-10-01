@@ -29,9 +29,31 @@ class ProductsController extends BaseController
 
             $this->checkIfExist($name);
             $product = new Product($name, $categoryId, $price, $quantity, $editorID);
-            echo 'awiodjawijd';
             var_dump($product);
             ProductRepository::create()->add($product);
+        }
+    }
+
+    public function edit(){
+        $_SESSION['categories'] = CategoriesRepository::create()->getAll();
+        $_SESSION['product'] = ProductRepository::create()->getProduct($this->parameters[0]);
+        
+        if($_SESSION['userId'] != $_SESSION['product']['editorId']){
+            echo 'You are not the editor of the product!';
+            die;
+        }
+
+        if(isset($_POST['edit'])){
+
+            $name = $_POST['name'];
+            $price = floatval($_POST['price']);
+            $quantity = floatval($_POST['quantity']);
+            $categoryId = intval($_POST['category']);
+            $editorID = intval($_SESSION['userId']);
+            $id = $_SESSION['product']['id'];
+            $this->checkIfExist($name);
+            $product = new Product($name, $categoryId, $price, $quantity, $editorID, $id);
+            ProductRepository::create()->edit($product);
         }
     }
 

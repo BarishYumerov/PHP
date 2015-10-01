@@ -36,7 +36,6 @@ class ProductRepository
     }
 
     public function add(Product $product){
-        var_dump($product);
         $query = "INSERT INTO products (name, categoryId, price, quantity, editorId)
             VALUES (?, ?, ?, ?, ?)";
         $params = [
@@ -52,11 +51,36 @@ class ProductRepository
         return $result;
     }
 
+    public function edit(Product $product){
+        $query = "Update products Set name = ?, categoryId = ?, price = ?, quantity = ?, editorId = ?
+        WHERE products.id = ?";
+        $params = [
+            $product->getName(),
+            $product->getCategoryId(),
+            $product->getPrice(),
+            $product->getQuantity(),
+            $product->getEditorId(),
+            $product->getId()
+        ];
+        $this->db->query($query, $params);
+        $result = $this->db->row();
+
+        return $result;
+    }
+
     public function getAll(){
-        $query = "Select id, name
+        $query = "Select *
         FROM products";
         $this->db->query($query);
         $result = $this->db->fetchAll();
+        return $result;
+    }
+
+    public function getProduct($id){
+        $query = "Select *
+        FROM products WHERE products.id = ?";
+        $this->db->query($query, [$id]);
+        $result = $this->db->row();
         return $result;
     }
 }

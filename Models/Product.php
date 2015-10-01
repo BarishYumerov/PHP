@@ -19,9 +19,7 @@ class Product
         $this->setCategoryId($categoryId);
         $this->setPrice($price);
         $this->setQuantity($quantity);
-
         $this->setEditorId($editorId);
-        echo 'dobe';
     }
 
     public function getId()
