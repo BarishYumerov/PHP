@@ -84,4 +84,12 @@ class CategoriesRepository
 
         return $result;
     }
+
+    public function getAll(){
+        $query = "Select id, name
+        FROM categories";
+        $this->db->query($query);
+        $result = $this->db->fetchAll();
+        return $result;
+    }
 }
