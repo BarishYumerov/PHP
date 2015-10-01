@@ -6,10 +6,14 @@ use Repositories\UserRepository;
 
 class User
 {
+    private static $initialCash = 1000;
+
     private $id;
     private $username;
     private $password;
     private $email;
+    private $cash;
+    private $role;
 
     public function __construct($username, $password, $email, $id = null)
     {
@@ -17,6 +21,8 @@ class User
         $this->setPassword($password);
         $this->setId($id);
         $this->setEmail($email);
+        $this->setCash($this::$initialCash);
+        $this->setRole(1);
     }
 
     public function getId()
@@ -57,6 +63,26 @@ class User
     public function setEmail($email)
     {
         $this->email = $email;
+    }
+
+    public function getCash()
+    {
+        return $this->cash;
+    }
+
+    public function setCash($cash)
+    {
+        $this->cash = $cash;
+    }
+
+    public function getRole()
+    {
+        return $this->role;
+    }
+
+    public function setRole($role)
+    {
+        $this->role = $role;
     }
 
     public function save()

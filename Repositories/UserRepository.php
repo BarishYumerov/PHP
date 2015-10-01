@@ -53,23 +53,26 @@ class UserRepository
         return $result;
     }
 
-
-    public function save(User $player)
+    public function save(User $user)
     {
+        var_dump($user);
         $query = "
-            INSERT INTO users (username, password, email)
-            VALUES (?, ?, ?)
+            INSERT INTO users (username, email, cash, roleId, password)
+            VALUES (?, ?, ?, ?, ?)
         ";
         $params = [
-            $player->getUsername(),
-            $player->getPassword(),
-            $player->getEmail()
+            $user->getUsername(),
+            $user->getEmail(),
+            $user->getCash(),
+            $user->getRole(),
+            $user->getPassword()
         ];
 
-        if ($player->getId()) {
+        if ($user->getId()) {
             $query = "UPDATE players SET username = ?, password = ? WHERE id = ?";
-            $params[] = $player->getId();
+            $params[] = $user->getId();
         }
+
         $this->db->query($query, $params);
         return $this->db->rows() > 0;
     }

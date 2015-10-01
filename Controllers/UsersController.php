@@ -28,33 +28,33 @@ class UsersController extends BaseController
 
             if($username == null){
                 echo 'Enter Valid Username!';
-                exit;
+                die;
             }
 
             if($email == null){
                 echo 'Enter email!';
-                exit;
+                die;
             }
 
             if($password == null){
                 echo 'Enter password!';
-                exit;
+                die;
             }
 
             if($confirm == null){
                 echo 'Confirm password!';
-                exit;
+                die;
             }
 
             if($_POST['password'] != $_POST['confirm']){
                 echo 'Confirm password and password are not the same!';
-                exit;
+                die;
             }
 
             $user = new User($username, $password, $email);
 
             $user->save();
-            echo 'registered!!';
+            $this->redirect('users', 'login');
         }
     }
 
