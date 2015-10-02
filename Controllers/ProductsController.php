@@ -69,6 +69,13 @@ class ProductsController extends BaseController
             $productId = key($_POST);
             $this->redirect('products', 'edit', [$productId]);
         }
+
+        if(isset($_POST['delete'])){
+            reset($_POST);
+            $productId = key($_POST);
+            ProductRepository::create()->delete($productId);
+            header('Refresh:0');
+        }
     }
 
     public function checkIfExist($name){
