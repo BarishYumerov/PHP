@@ -17,8 +17,11 @@
                 '<p>Price: ' . $product['price'] . '</p>' .
                 '<p>Quantity: ' . $product['quantity'] . '</p>' .
                 '<p>Category: ' . $product['category'] . '</p>'.
-                '<input type="hidden" name="' . $product['id'] . '" value="wut"/>'
+                '<input type="hidden" value="' . $product['id'] . '" name="id"/>'.
+                '<input type="hidden" value="' . $product['price'] . '" name="price"/>'.
+                '<input type="hidden" value="' . $product['quantity'] . '" name="quantity"/>'
             ?>
+            <input type="submit" name="buy" value="Buy">
         </div>
         <hr>
     </form>

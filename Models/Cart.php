@@ -5,12 +5,12 @@ namespace Models;
 class Cart
 {
     private $id;
-    private $name;
     private $ownerId;
+    private $value;
 
-    public function __construct($name, $ownedId, $id = null)
+    public function __construct($value, $ownedId, $id = null)
     {
-        $this->setName($name);
+        $this->setValue($value);
         $this->setId($id);
         $this->setOwnerId($ownedId);
     }
@@ -25,19 +25,14 @@ class Cart
         $this->id = $id;
     }
 
-    public function getName()
+    public function getValue()
     {
-        return $this->name;
+        return $this->value;
     }
 
-    public function setName($name)
+    public function setValue($value)
     {
-        if(strlen($name) < 2){
-            echo 'Too short Name';
-            die;
-        }
-
-        $this->name = $name;
+        $this->value = $value;
     }
 
     public function getOwnerId()

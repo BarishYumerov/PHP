@@ -9,6 +9,7 @@
                 '<p>Category: ' . $product['category'] . '</p>'.
                 '<input type="hidden" name="' . $product['id'] . '" value="wut"/>'
             ?>
+            <input type="submit" name="buy" value="Buy">
         </div>
         <hr>
     </form>

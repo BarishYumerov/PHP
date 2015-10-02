@@ -4,6 +4,7 @@ namespace Repositories;
 
 use Db;
 use Configs\DbConfig;
+use Models\Order;
 use Models\Product;
 
 class ProductRepository
@@ -118,6 +119,29 @@ class ProductRepository
                     WHERE p.editorId = ?";
         $this->db->query($query, [$editorId]);
         $result = $this->db->fetchAll();
+        return $result;
+    }
+
+    public function buy(Order $order){
+        $query = "INSERT INTO cartsproducts (cartId, productId, quantity)
+            VALUES (?, ?, ?)";
+        $params = [
+            $order->getCartId(),
+            $order->getProductId(),
+            $order->getQuantity()
+        ];
+        $this->db->query($query, $params);
+        $result = $this->db->row();
+
+        $query = "UPDATE carts SET value = value + ?
+                  WHERE carts.id = ?";
+        $params = [$order->getQuantity() * $order->getPrice(), $order->getCartId()];
+        $this->db->query($query, $params);
+
+        $query = "UPDATE products SET quantity = quantity - ?
+                  WHERE products.id = ?";
+        $params = [$order->getQuantity(), $order->getProductId()];
+        $this->db->query($query, $params);
         return $result;
     }
 }
