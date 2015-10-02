@@ -47,7 +47,7 @@ class BaseController
             $url .= "/$action";
         }
         foreach ($params as $key => $param) {
-            $url .= "/$key/$param";
+            $url .= "/$param";
         }
         header("Location: " . $url);
         exit;

@@ -83,4 +83,21 @@ class ProductRepository
         $result = $this->db->row();
         return $result;
     }
+
+    public function delete($id){
+        $query = "Delete FROM products WHERE id = ?";
+        $this->db->query($query, [$id]);
+        $result = $this->db->row();
+        return $result;
+    }
+
+    public function getMyProducts($editorId){
+        $query = "SELECT p.id, p.name, p.quantity, p.price, c.name as category
+                    FROM products p
+                    LEFT JOIN categories c ON c.id = p.categoryId
+                    WHERE p.editorId = ?";
+        $this->db->query($query, [$editorId]);
+        $result = $this->db->fetchAll();
+        return $result;
+    }
 }

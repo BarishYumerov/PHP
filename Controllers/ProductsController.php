@@ -61,6 +61,16 @@ class ProductsController extends BaseController
         }
     }
 
+    public function myProducts(){
+        $_SESSION['products'] = ProductRepository::create()->getMyProducts($_SESSION['userId']);
+        $_SESSION['categories'] = CategoriesRepository::create()->getAll();
+        if(isset($_POST['edit'])){
+            reset($_POST);
+            $productId = key($_POST);
+            $this->redirect('products', 'edit', [$productId]);
+        }
+    }
+
     public function checkIfExist($name){
         $products = ProductRepository::create()->getAll();
         foreach($products as $key => $value){

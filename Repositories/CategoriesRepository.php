@@ -85,6 +85,14 @@ class CategoriesRepository
         return $result;
     }
 
+    public function getOne($id){
+        $query = "Select id, name
+        FROM categories WHERE categories.id = ?";
+        $this->db->query($query, [$id]);
+        $result = $this->db->row();
+        return $result;
+    }
+
     public function getAll(){
         $query = "Select id, name
         FROM categories";
