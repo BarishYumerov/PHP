@@ -10,6 +10,7 @@
 
     <label for="category">Category: </label>
     <select name="category" id="category">
+        <option value="-1"></option>
         <?php foreach ($_SESSION['categories'] as $category): ?>
             <option value="<?= $category['id'] ?>"><?= $category['name'] ?></option>
         <?php endforeach; ?>

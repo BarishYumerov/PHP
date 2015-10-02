@@ -18,6 +18,23 @@ class ProductsController extends BaseController
         $_SESSION['products'] = ProductRepository::create()->available();
     }
 
+    public function category(){
+        $_SESSION['products'] = [];
+        $_SESSION['categories'] = CategoriesRepository::create()->getAll();
+
+        if(count($this->parameters) > 0){
+            $_SESSION['products'] = ProductRepository::create()->categoryList($this->parameters[0]);
+        }
+
+        if(isset($_POST['search'])){
+            $categoryId = intval($_POST['category']);
+            if($categoryId == -1){
+                $this->redirect('products', 'category');
+            }
+            $this->redirect('products', 'category', [$categoryId]);
+        }
+    }
+
     public function add(){
         if($_SESSION['roleId'] < 2){
             $this->redirect('users', 'usersHome');

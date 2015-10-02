@@ -61,6 +61,16 @@ class ProductRepository
         return $result;
     }
 
+    public function categoryList($categoryId){
+        $query = "SELECT p.id, p.name, p.quantity, p.price, c.name as category
+                    FROM products p
+                    LEFT JOIN categories c ON c.id = p.categoryId
+                    WHERE p.quantity > 0 and c.id = ?";
+        $this->db->query($query, [$categoryId]);
+        $result = $this->db->fetchAll();
+        return $result;
+    }
+
     public function edit(Product $product){
         $query = "Update products Set name = ?, categoryId = ?, price = ?, quantity = ?, editorId = ?
         WHERE products.id = ?";
