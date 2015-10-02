@@ -12,13 +12,16 @@ class ProductsController extends BaseController
         if(!isset($_SESSION['username'])){
             $this->redirect('users', 'login');
         }
+    }
 
-        if($_SESSION['roleId'] < 2){
-            $this->redirect('users', 'usersHome');
-        }
+    public function available(){
+        $_SESSION['products'] = ProductRepository::create()->available();
     }
 
     public function add(){
+        if($_SESSION['roleId'] < 2){
+            $this->redirect('users', 'usersHome');
+        }
         $_SESSION['categories'] = CategoriesRepository::create()->getAll();
         if(isset($_POST['create'])){
             $name = $_POST['name'];
@@ -37,6 +40,9 @@ class ProductsController extends BaseController
     }
 
     public function edit(){
+        if($_SESSION['roleId'] < 2){
+            $this->redirect('users', 'usersHome');
+        }
         $_SESSION['categories'] = CategoriesRepository::create()->getAll();
         $_SESSION['product'] = ProductRepository::create()->getProduct($this->parameters[0]);
 
@@ -63,7 +69,6 @@ class ProductsController extends BaseController
 
     public function myProducts(){
         $_SESSION['products'] = ProductRepository::create()->getMyProducts($_SESSION['userId']);
-        $_SESSION['categories'] = CategoriesRepository::create()->getAll();
         if(isset($_POST['edit'])){
             reset($_POST);
             $productId = key($_POST);
