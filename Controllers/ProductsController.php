@@ -12,6 +12,7 @@ class ProductsController extends BaseController
         if(!isset($_SESSION['username'])){
             $this->redirect('users', 'login');
         }
+        $this->view->partial('authHeader');
     }
 
     public function available(){
