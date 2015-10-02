@@ -6,5 +6,5 @@
     ?><br>
     <label for="quantity">Enter quantity: </label>
     <input type="text" name="quantity" id="quantity">
-    <input type="submit" name="buy">
+    <input type="submit" name="buy" value="Add To Cart">
 </form>

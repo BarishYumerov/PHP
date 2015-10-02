@@ -3,6 +3,7 @@
 namespace Controllers;
 
 use Models\User;
+use Repositories\CartRepository;
 use Repositories\UserRepository;
 
 class UsersController extends BaseController
@@ -52,9 +53,11 @@ class UsersController extends BaseController
             }
 
             $user = new User($username, $password, $email);
-
             $user->save();
-            $this->redirect('users', 'login');
+            $userInstance = UserRepository::create()->getByName($username);
+            $newUserId = intval($userInstance['id']);
+            CartRepository::create()->newCart($newUserId);
+            //$this->redirect('users', 'login');
         }
     }
 

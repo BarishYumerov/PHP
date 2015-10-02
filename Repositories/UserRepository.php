@@ -44,6 +44,15 @@ class UserRepository
         return $result;
     }
 
+    public function getByName($username){
+        $query = "SELECT id, username, password, email
+        FROM users WHERE username = ?";
+        $this->db->query($query, [$username]);
+        $result = $this->db->row();
+
+        return $result;
+    }
+
     public function loginCheck($username, $passwordHash){
         $query = "SELECT id, username, password, email, cash, roleId
         FROM users WHERE username = ? && password = ?";
@@ -55,7 +64,6 @@ class UserRepository
 
     public function save(User $user)
     {
-        var_dump($user);
         $query = "
             INSERT INTO users (username, email, cash, roleId, password)
             VALUES (?, ?, ?, ?, ?)

@@ -40,4 +40,12 @@ class CartRepository
         $result = $this->db->row();
         return $result;
     }
+
+    public function newCart($userId){
+        var_dump($userId);
+        $query = "INSERT INTO carts (ownerId, value) values(?, ?)";
+        $this->db->query($query, [$userId, 0]);
+        $result = $this->db->row();
+        return $result;
+    }
 }
