@@ -64,6 +64,16 @@ class UserRepository
 
     public function save(User $user)
     {
+        $query = "SELECT * FROM users WHERE username = ?";
+        $this->db->query($query, [$user->getUsername()]);
+
+        $result = $this->db->row();
+
+        if($result){
+            echo 'The username already taken!';
+            die;
+        }
+
         $query = "
             INSERT INTO users (username, email, cash, roleId, password)
             VALUES (?, ?, ?, ?, ?)
