@@ -38,6 +38,19 @@ class HomeController extends BaseController
         $this->view->partial('authHeader');
     }
 
+    public function editorHome(){
+        if(!isset($_SESSION['username'])){
+            $this->redirect('users', 'login');
+            exit;
+        }
+
+        if(isset($_POST['logout'])){
+            session_destroy();
+            $this->redirect('home', 'guestHome');
+        }
+        $this->view->partial('editorHeader');
+    }
+
     public function guestHome(){
         if(isset($_SESSION['username'])){
             $this->redirect('home', 'userHome');

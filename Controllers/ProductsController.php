@@ -17,7 +17,15 @@ class ProductsController extends BaseController
             $this->redirect('users', 'login');
         }
         $this->productRepository = ProductRepository::create();
-        $this->view->partial('authHeader');
+        if($_SESSION['roleId'] == 1){
+            $this->view->partial('authHeader');
+        }
+        if($_SESSION['roleId'] == 2){
+            $this->view->partial('editorHeader');
+        }
+        if($_SESSION['roleId'] == 3){
+            $this->view->partial('editorHeader');
+        }
     }
 
     public function available(){
@@ -66,7 +74,7 @@ class ProductsController extends BaseController
             $product = new Product($name, $categoryId, $price, $quantity, $editorID);
             var_dump($product);
             ProductRepository::create()->add($product);
-            $this->redirect('home', 'userHome');
+            $this->redirect('home', 'editorHome');
 
         }
     }
@@ -95,7 +103,7 @@ class ProductsController extends BaseController
             $product = new Product($name, $categoryId, $price, $quantity, $editorID, $id);
             ProductRepository::create()->edit($product);
 
-            $this->redirect('home', 'userHome');
+            $this->redirect('home', 'editorHome');
         }
     }
 

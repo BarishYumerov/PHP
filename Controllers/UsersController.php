@@ -10,7 +10,15 @@ class UsersController extends BaseController
 {
     protected function onLoad(){
         if(isset($_SESSION['username'])){
-            $this->redirect('home', 'userHome');
+            if($_SESSION['roleId'] == 1){
+                $this->redirect('home', 'userHome');
+            }
+            if($_SESSION['roleId'] == 2){
+                $this->redirect('home', 'editorHome');
+            }
+            if($_SESSION['roleId'] == 3){
+                $this->redirect('home', 'editorHome');
+            }
             exit;
         }
     }
@@ -59,7 +67,7 @@ class UsersController extends BaseController
             if($userInstance){
                 CartRepository::create()->newCart($newUserId);
             }
-            //$this->redirect('users', 'login');
+            $this->redirect('users', 'login');
         }
     }
 
@@ -83,7 +91,14 @@ class UsersController extends BaseController
                 $_SESSION['cash'] = $info['cash'];
 
                 $_SESSION['userCart'] = CartRepository::create()->getUserCard($info['id']);
-                $this->redirect('home', 'userHome');
+                if($info['roleId'] == 1){
+                    $this->redirect('home', 'userHome');
+                }
+
+                if($info['roleId'] == 2){
+                    $this->redirect('home', 'editorHome');
+                }
+                $this->redirect('home', 'editorHome');
             }
             echo 'Invalid details';
         }
