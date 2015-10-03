@@ -15,10 +15,10 @@
         <hr>
         <div id="<?= $product['productId'] ?>">
             <?php
-            echo '<p>Name: ' . $product['product']['name'] . '</p>' .
-                '<p>Price: ' . $product['product']['price'] . '</p>' .
-                '<p>Quantity: ' . $product['quantity'] . '</p>' .
-                '<p>Category: ' . $product['product']['categoryId'] . '</p>'.
+            echo '<p><b>Name:</b> ' . $product['product']['name'] . '</p>' .
+                '<p><b>Price:</b> ' . $product['product']['price'] . '</p>' .
+                '<p><b>Quantity:</b> ' . $product['quantity'] . '</p>' .
+                '<p><b>Category:</b> ' . $product['product']['category'] . '</p>'.
                 '<input type="hidden" name="' . $product['productId'] . '" value="wut"/>'
             ?>
             <input type="submit" name="remove" value="Remove From Cart">

@@ -90,16 +90,19 @@ class ProductRepository
     }
 
     public function getAll(){
-        $query = "Select *
-        FROM products";
+        $query = "SELECT p.id, p.name, p.quantity, p.price, c.name as category
+                    FROM products p
+                    LEFT JOIN categories c ON c.id = p.categoryId";
         $this->db->query($query);
         $result = $this->db->fetchAll();
         return $result;
     }
 
     public function getProduct($id){
-        $query = "Select *
-        FROM products WHERE products.id = ?";
+        $query = "SELECT p.id, p.name, p.quantity, p.price, c.name as category
+                    FROM products p
+                    LEFT JOIN categories c ON c.id = p.categoryId
+                    WHERE p.id = ?";
         $this->db->query($query, [$id]);
         $result = $this->db->row();
         return $result;

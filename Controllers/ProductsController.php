@@ -22,11 +22,15 @@ class ProductsController extends BaseController
 
     public function available(){
         $_SESSION['products'] = $this->productRepository->available();
+        if(isset($_POST['buy'])){
+            $productId = intval(array_shift($_POST));
+            $this->redirect('products', 'buy', [$productId]);
+        }
     }
 
     public function category(){
         $_SESSION['products'] = [];
-        $_SESSION['categories'] = $this->productRepository->getAll();
+        $_SESSION['categories'] = CategoriesRepository::create()->getAll();
 
         if(count($this->parameters) > 0){
             $_SESSION['products'] = $this->productRepository->categoryList($this->parameters[0]);
@@ -133,7 +137,7 @@ class ProductsController extends BaseController
             }
             $order = new Order(intval($product['id']), intval($cart[0]), $quantity, $price);
             $this->productRepository->buy($order);
-            //$this->redirect('products', 'category');
+            $this->redirect('products', 'category');
         }
     }
 

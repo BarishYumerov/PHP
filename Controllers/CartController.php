@@ -2,6 +2,7 @@
 
 namespace Controllers;
 
+use Repositories\CartRepository;
 
 class CartController extends BaseController
 {
@@ -12,7 +13,7 @@ class CartController extends BaseController
     }
 
     public function manage(){
-
+        $_SESSION['userCart'] = CartRepository::create()->getUserCard($_SESSION['userId']);
         $this->view->partial('authHeader');
     }
 }

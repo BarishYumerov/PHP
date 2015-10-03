@@ -7,7 +7,7 @@
                 '<p>Price: ' . $product['price'] . '</p>' .
                 '<p>Quantity: ' . $product['quantity'] . '</p>' .
                 '<p>Category: ' . $product['category'] . '</p>'.
-                '<input type="hidden" name="' . $product['id'] . '" value="wut"/>'
+                '<input type="hidden" name="id" value="' . $product['id'] . '"/>'
             ?>
             <input type="submit" name="buy" value="Buy">
         </div>
