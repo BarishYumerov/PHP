@@ -56,7 +56,9 @@ class UsersController extends BaseController
             $user->save();
             $userInstance = UserRepository::create()->getByName($username);
             $newUserId = intval($userInstance['id']);
-            CartRepository::create()->newCart($newUserId);
+            if($userInstance){
+                CartRepository::create()->newCart($newUserId);
+            }
             //$this->redirect('users', 'login');
         }
     }
@@ -79,6 +81,8 @@ class UsersController extends BaseController
                 $_SESSION['email'] = $info['email'];
                 $_SESSION['roleId'] = $info['roleId'];
                 $_SESSION['cash'] = $info['cash'];
+
+                $_SESSION['userCart'] = CartRepository::create()->getUserCard($info['id']);
                 $this->redirect('home', 'userHome');
             }
             echo 'Invalid details';

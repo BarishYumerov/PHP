@@ -68,7 +68,6 @@ class UserRepository
         $this->db->query($query, [$user->getUsername()]);
 
         $result = $this->db->row();
-
         if($result){
             echo 'The username already taken!';
             die;
@@ -81,7 +80,7 @@ class UserRepository
         $params = [
             $user->getUsername(),
             $user->getEmail(),
-            $user->getCash(),
+            floatval($user->getCash()),
             $user->getRole(),
             $user->getPassword()
         ];
@@ -90,7 +89,6 @@ class UserRepository
             $query = "UPDATE players SET username = ?, password = ? WHERE id = ?";
             $params[] = $user->getId();
         }
-
         $this->db->query($query, $params);
         return $this->db->rows() > 0;
     }

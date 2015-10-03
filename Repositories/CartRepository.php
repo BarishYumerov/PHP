@@ -38,6 +38,17 @@ class CartRepository
         $query = "SELECT * FROM carts WHERE carts.ownerId = ?";
         $this->db->query($query, [$userId]);
         $result = $this->db->row();
+
+        $query = "SELECT * FROM  cartsproducts where cartId = ?";
+        $this->db->query($query, [$result['id']]);
+        $cartProducts = $this->db->fetchAll();
+        $productRepo = ProductRepository::create();
+        foreach($cartProducts as $key => $value){
+            $cartProducts[$key]['test'] = 'test';
+            $cartProducts[$key]['product'] = $productRepo->getProduct(intval($value['productId']));
+        }
+
+        $result['cartProducts'] = $cartProducts;
         return $result;
     }
 
