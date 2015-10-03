@@ -44,19 +44,40 @@ class CartRepository
         $cartProducts = $this->db->fetchAll();
         $productRepo = ProductRepository::create();
         foreach($cartProducts as $key => $value){
-            $cartProducts[$key]['test'] = 'test';
             $cartProducts[$key]['product'] = $productRepo->getProduct(intval($value['productId']));
         }
 
+        $user = UserRepository::create()->getOne($userId);
+        $_SESSION['cash'] = $user['cash'];
         $result['cartProducts'] = $cartProducts;
         return $result;
     }
 
     public function newCart($userId){
-        var_dump($userId);
         $query = "INSERT INTO carts (ownerId, value) values(?, ?)";
         $this->db->query($query, [$userId, 0]);
         $result = $this->db->row();
+        return $result;
+    }
+
+    public function checkout(){
+        $userId = $_SESSION['userId'];
+        $cartId = intval($_SESSION['userCart']['id']);
+        $checkoutValue = $_SESSION['userCart']['value'];
+
+        $query = "UPDATE users set cash = cash - ?
+                  WHERE id = ?";
+        $this->db->query($query, [$checkoutValue, $userId]);
+
+        $query = "UPDATE carts set value = 0
+                  WHERE id = ?";
+        $this->db->query($query, [$cartId]);
+
+        $query = "DELETE FROM cartsproducts
+                  WHERE cartId = ?";
+        $this->db->query($query, [$cartId]);
+        $result = $this->db->row();
+        var_dump($cartId);
         return $result;
     }
 }

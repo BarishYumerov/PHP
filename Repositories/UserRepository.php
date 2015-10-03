@@ -36,7 +36,7 @@ class UserRepository
 
     public function getOne($id)
     {
-        $query = "SELECT id, username, password, email
+        $query = "SELECT id, username, password, email, cash
         FROM users WHERE id = ?";
         $this->db->query($query, [$id]);
         $result = $this->db->row();
@@ -45,7 +45,7 @@ class UserRepository
     }
 
     public function getByName($username){
-        $query = "SELECT id, username, password, email
+        $query = "SELECT id, username, password, email, cash
         FROM users WHERE username = ?";
         $this->db->query($query, [$username]);
         $result = $this->db->row();

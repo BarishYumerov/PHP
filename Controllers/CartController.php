@@ -3,6 +3,7 @@
 namespace Controllers;
 
 use Repositories\CartRepository;
+use Repositories\CategoriesRepository;
 
 class CartController extends BaseController
 {
@@ -23,5 +24,9 @@ class CartController extends BaseController
 
     public function manage(){
         $_SESSION['userCart'] = CartRepository::create()->getUserCard($_SESSION['userId']);
+        if(isset($_POST['checkout'])){
+            CartRepository::create()->checkout();
+            $this->redirect('cart', 'manage');
+        }
     }
 }
