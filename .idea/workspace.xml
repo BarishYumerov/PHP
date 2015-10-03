@@ -4,7 +4,6 @@
     <list default="true" id="8cc37d93-2586-4e5f-9ddf-e5ad72222143" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Controllers/CartController.php" afterPath="$PROJECT_DIR$/Controllers/CartController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Repositories/CartRepository.php" afterPath="$PROJECT_DIR$/Repositories/CartRepository.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Repositories/UserRepository.php" afterPath="$PROJECT_DIR$/Repositories/UserRepository.php" />
     </list>
     <ignored path="PHP.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -29,56 +28,21 @@
       <file leaf-file-name="CartRepository.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Repositories/CartRepository.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.79518074">
-              <caret line="49" column="58" selection-start-line="49" selection-start-column="58" selection-end-line="49" selection-end-column="58" />
+            <state vertical-scroll-proportion="0.8244406">
+              <caret line="96" column="36" selection-start-line="96" selection-start-column="36" selection-end-line="96" selection-end-column="36" />
               <folding>
                 <element signature="e#32#39#0#PHP" expanded="true" />
-                <marker date="1443881153245" expanded="true" signature="678:721" placeholder="SELECT * FRO..carts..." />
-                <marker date="1443881153245" expanded="true" signature="824:869" placeholder="SELECT * FRO..cartsproducts..." />
-                <marker date="1443881153245" expanded="true" signature="1421:1468" placeholder="INSERT INTO ..." />
-                <marker date="1443881153245" expanded="true" signature="1788:1851" placeholder="UPDATE users..." />
-                <marker date="1443881153245" expanded="true" signature="1794:1851" placeholder="SELECT * FRO..carts..." />
-                <marker date="1443881153245" expanded="true" signature="1934:1991" placeholder="UPDATE carts..." />
-                <marker date="1443881153245" expanded="true" signature="2058:2118" placeholder="DELETE from ..." />
-                <marker date="1443881153245" expanded="true" signature="2069:2118" placeholder="UPDATE users..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Cart.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Models/Cart.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-5.230769">
-              <caret line="8" column="19" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="19" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UsersController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Controllers/UsersController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="42.384617">
-              <caret line="18" column="39" selection-start-line="18" selection-start-column="39" selection-end-line="18" selection-end-column="39" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UserRepository.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Repositories/UserRepository.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-8.730769">
-              <caret line="38" column="60" selection-start-line="38" selection-start-column="60" selection-end-line="38" selection-end-column="60" />
-              <folding>
-                <element signature="e#31#47#0#PHP" expanded="true" />
-                <marker date="1443881138245" expanded="true" signature="690:764" placeholder="SELECT id, u..users..." />
-                <marker date="1443881138245" expanded="true" signature="936:1016" placeholder="SELECT id, u..users..." />
-                <marker date="1443881138245" expanded="true" signature="1210:1314" placeholder="SELECT id, u..users..." />
-                <marker date="1443881138245" expanded="true" signature="1508:1546" placeholder="SELECT * FRO..users..." />
-                <marker date="1443881138245" expanded="true" signature="1772:1866" placeholder="INSERT INTO ..." />
-                <marker date="1443881138245" expanded="true" signature="2130:2188" placeholder="UPDATE playe..." />
+                <marker date="1443883929534" expanded="true" signature="678:721" placeholder="SELECT * FRO..carts..." />
+                <marker date="1443883929534" expanded="true" signature="824:869" placeholder="SELECT * FRO..cartsproducts..." />
+                <marker date="1443883929534" expanded="true" signature="1421:1468" placeholder="INSERT INTO ..." />
+                <marker date="1443883929534" expanded="true" signature="1788:1851" placeholder="UPDATE users..." />
+                <marker date="1443883929534" expanded="true" signature="1794:1851" placeholder="SELECT * FRO..carts..." />
+                <marker date="1443883929534" expanded="true" signature="1934:1991" placeholder="UPDATE carts..." />
+                <marker date="1443883929534" expanded="true" signature="2058:2118" placeholder="DELETE from ..." />
+                <marker date="1443883929534" expanded="true" signature="2069:2118" placeholder="UPDATE users..." />
+                <marker date="1443883929534" expanded="true" signature="2475:2549" placeholder="UPDATE produ..." />
+                <marker date="1443883929534" expanded="true" signature="2681:2738" placeholder="UPDATE carts..." />
+                <marker date="1443883929534" expanded="true" signature="2805:2865" placeholder="DELETE FROM ..." />
               </folding>
             </state>
           </provider>
@@ -87,8 +51,8 @@
       <file leaf-file-name="CartController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Controllers/CartController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-16.346153">
-              <caret line="25" column="62" selection-start-line="25" selection-start-column="62" selection-end-line="25" selection-end-column="62" />
+            <state vertical-scroll-proportion="-17.115385">
+              <caret line="33" column="0" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
               <folding>
                 <element signature="e#31#63#0#PHP" expanded="true" />
               </folding>
@@ -96,21 +60,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ProductsController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Controllers/ProductsController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.65384614">
-              <caret line="19" column="8" selection-start-line="19" selection-start-column="8" selection-end-line="27" selection-end-column="9" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="manage.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Views/cart/manage.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-1.9615384">
-              <caret line="3" column="63" selection-start-line="3" selection-start-column="63" selection-end-line="3" selection-end-column="63" />
+            <state vertical-scroll-proportion="-3.9230769">
+              <caret line="6" column="4" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="4" />
               <folding />
             </state>
           </provider>
@@ -154,8 +108,8 @@
         <option value="$PROJECT_DIR$/Views/home/editorHome.php" />
         <option value="$PROJECT_DIR$/Controllers/UsersController.php" />
         <option value="$PROJECT_DIR$/Views/partials/authHeader.php" />
-        <option value="$PROJECT_DIR$/Controllers/CartController.php" />
         <option value="$PROJECT_DIR$/Repositories/UserRepository.php" />
+        <option value="$PROJECT_DIR$/Controllers/CartController.php" />
         <option value="$PROJECT_DIR$/Repositories/CartRepository.php" />
       </list>
     </option>
@@ -542,12 +496,12 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#31#47#0#PHP" expanded="true" />
-            <marker date="1443881138245" expanded="true" signature="690:764" placeholder="SELECT id, u..users..." />
-            <marker date="1443881138245" expanded="true" signature="936:1016" placeholder="SELECT id, u..users..." />
-            <marker date="1443881138245" expanded="true" signature="1210:1314" placeholder="SELECT id, u..users..." />
-            <marker date="1443881138245" expanded="true" signature="1508:1546" placeholder="SELECT * FRO..users..." />
-            <marker date="1443881138245" expanded="true" signature="1772:1866" placeholder="INSERT INTO ..." />
-            <marker date="1443881138245" expanded="true" signature="2130:2188" placeholder="UPDATE playe..." />
+            <marker date="1443881138245" expanded="true" signature="-1:-1" placeholder="SELECT id, u..users..." />
+            <marker date="1443881138245" expanded="true" signature="-1:-1" placeholder="SELECT id, u..users..." />
+            <marker date="1443881138245" expanded="true" signature="-1:-1" placeholder="SELECT id, u..users..." />
+            <marker date="1443881138245" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..users..." />
+            <marker date="1443881138245" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
+            <marker date="1443881138245" expanded="true" signature="-1:-1" placeholder="UPDATE playe..." />
           </folding>
         </state>
       </provider>
@@ -798,26 +752,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Views/cart/manage.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.9615384">
-          <caret line="3" column="63" selection-start-line="3" selection-start-column="63" selection-end-line="3" selection-end-column="63" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Controllers/ProductsController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.65384614">
+        <state vertical-scroll-proportion="0.029259896">
           <caret line="19" column="8" selection-start-line="19" selection-start-column="8" selection-end-line="27" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Controllers/UsersController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="42.384617">
-          <caret line="18" column="39" selection-start-line="18" selection-start-column="39" selection-end-line="18" selection-end-column="39" />
           <folding />
         </state>
       </provider>
@@ -830,26 +768,42 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Controllers/UsersController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="42.384617">
+          <caret line="18" column="39" selection-start-line="18" selection-start-column="39" selection-end-line="18" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Views/cart/manage.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.9230769">
+          <caret line="6" column="4" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Repositories/UserRepository.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.730769">
+        <state vertical-scroll-proportion="16.76923">
           <caret line="38" column="60" selection-start-line="38" selection-start-column="60" selection-end-line="38" selection-end-column="60" />
           <folding>
             <element signature="e#31#47#0#PHP" expanded="true" />
-            <marker date="1443881138245" expanded="true" signature="690:764" placeholder="SELECT id, u..users..." />
-            <marker date="1443881138245" expanded="true" signature="936:1016" placeholder="SELECT id, u..users..." />
-            <marker date="1443881138245" expanded="true" signature="1210:1314" placeholder="SELECT id, u..users..." />
-            <marker date="1443881138245" expanded="true" signature="1508:1546" placeholder="SELECT * FRO..users..." />
-            <marker date="1443881138245" expanded="true" signature="1772:1866" placeholder="INSERT INTO ..." />
-            <marker date="1443881138245" expanded="true" signature="2130:2188" placeholder="UPDATE playe..." />
+            <marker date="1443881138245" expanded="true" signature="-1:-1" placeholder="SELECT id, u..users..." />
+            <marker date="1443881138245" expanded="true" signature="-1:-1" placeholder="SELECT id, u..users..." />
+            <marker date="1443881138245" expanded="true" signature="-1:-1" placeholder="SELECT id, u..users..." />
+            <marker date="1443881138245" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..users..." />
+            <marker date="1443881138245" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
+            <marker date="1443881138245" expanded="true" signature="-1:-1" placeholder="UPDATE playe..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Controllers/CartController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-16.346153">
-          <caret line="25" column="62" selection-start-line="25" selection-start-column="62" selection-end-line="25" selection-end-column="62" />
+        <state vertical-scroll-proportion="-17.115385">
+          <caret line="33" column="0" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
           <folding>
             <element signature="e#31#63#0#PHP" expanded="true" />
           </folding>
@@ -858,18 +812,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Repositories/CartRepository.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.79518074">
-          <caret line="49" column="58" selection-start-line="49" selection-start-column="58" selection-end-line="49" selection-end-column="58" />
+        <state vertical-scroll-proportion="0.8244406">
+          <caret line="96" column="36" selection-start-line="96" selection-start-column="36" selection-end-line="96" selection-end-column="36" />
           <folding>
             <element signature="e#32#39#0#PHP" expanded="true" />
-            <marker date="1443881153245" expanded="true" signature="678:721" placeholder="SELECT * FRO..carts..." />
-            <marker date="1443881153245" expanded="true" signature="824:869" placeholder="SELECT * FRO..cartsproducts..." />
-            <marker date="1443881153245" expanded="true" signature="1421:1468" placeholder="INSERT INTO ..." />
-            <marker date="1443881153245" expanded="true" signature="1788:1851" placeholder="UPDATE users..." />
-            <marker date="1443881153245" expanded="true" signature="1794:1851" placeholder="SELECT * FRO..carts..." />
-            <marker date="1443881153245" expanded="true" signature="1934:1991" placeholder="UPDATE carts..." />
-            <marker date="1443881153245" expanded="true" signature="2058:2118" placeholder="DELETE from ..." />
-            <marker date="1443881153245" expanded="true" signature="2069:2118" placeholder="UPDATE users..." />
+            <marker date="1443883929534" expanded="true" signature="678:721" placeholder="SELECT * FRO..carts..." />
+            <marker date="1443883929534" expanded="true" signature="824:869" placeholder="SELECT * FRO..cartsproducts..." />
+            <marker date="1443883929534" expanded="true" signature="1421:1468" placeholder="INSERT INTO ..." />
+            <marker date="1443883929534" expanded="true" signature="1788:1851" placeholder="UPDATE users..." />
+            <marker date="1443883929534" expanded="true" signature="1794:1851" placeholder="SELECT * FRO..carts..." />
+            <marker date="1443883929534" expanded="true" signature="1934:1991" placeholder="UPDATE carts..." />
+            <marker date="1443883929534" expanded="true" signature="2058:2118" placeholder="DELETE from ..." />
+            <marker date="1443883929534" expanded="true" signature="2069:2118" placeholder="UPDATE users..." />
+            <marker date="1443883929534" expanded="true" signature="2475:2549" placeholder="UPDATE produ..." />
+            <marker date="1443883929534" expanded="true" signature="2681:2738" placeholder="UPDATE carts..." />
+            <marker date="1443883929534" expanded="true" signature="2805:2865" placeholder="DELETE FROM ..." />
           </folding>
         </state>
       </provider>

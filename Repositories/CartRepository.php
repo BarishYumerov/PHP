@@ -80,4 +80,21 @@ class CartRepository
         var_dump($cartId);
         return $result;
     }
+
+    public function emptyCart(){
+        $cartId = intval($_SESSION['userCart']['id']);
+        $products = $_SESSION['userCart']['cartProducts'];
+        foreach($products as $key => $value){
+            $query = "UPDATE products set quantity = quantity + ?
+                  WHERE id = ?";
+            $this->db->query($query, [floatval($value['quantity']), floatval($value['productId'])]);
+        }
+        $query = "UPDATE carts set value = 0
+                  WHERE id = ?";
+        $this->db->query($query, [$cartId]);
+
+        $query = "DELETE FROM cartsproducts
+                  WHERE cartId = ?";
+        $this->db->query($query, [$cartId]);
+    }
 }

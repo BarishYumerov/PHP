@@ -28,5 +28,10 @@ class CartController extends BaseController
             CartRepository::create()->checkout();
             $this->redirect('cart', 'manage');
         }
+
+        if(isset($_POST['empty'])){
+            CartRepository::create()->emptyCart();
+
+        }
     }
 }
