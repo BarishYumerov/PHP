@@ -99,7 +99,6 @@ class ProductsController extends BaseController
             $categoryId = intval($_POST['category']);
             $editorID = intval($_SESSION['userId']);
             $id = $_SESSION['product']['id'];
-            $this->checkIfExist($name);
             $product = new Product($name, $categoryId, $price, $quantity, $editorID, $id);
             ProductRepository::create()->edit($product);
 

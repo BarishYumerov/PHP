@@ -99,7 +99,7 @@ class ProductRepository
     }
 
     public function getProduct($id){
-        $query = "SELECT p.id, p.name, p.quantity, p.price, c.name as category
+        $query = "SELECT p.id, p.name, p.quantity, p.price, c.name as category, editorId
                     FROM products p
                     LEFT JOIN categories c ON c.id = p.categoryId
                     WHERE p.id = ?";
