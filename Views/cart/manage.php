@@ -15,7 +15,7 @@
         <hr>
         <div id="<?= $product['productId'] ?>">
             <?php
-            echo '<p><b>Name:</b> ' . $product['product']['name'] . '</p>' .
+            echo '<p><b>Name:</b> ' . htmlspecialchars($product['product']['name']) . '</p>' .
                 '<p><b>Price:</b> ' . $product['product']['price'] . '</p>' .
                 '<p><b>Quantity:</b> ' . $product['quantity'] . '</p>' .
                 '<p><b>Category:</b> ' . $product['product']['category'] . '</p>'.

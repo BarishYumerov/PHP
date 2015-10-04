@@ -1,1 +1,1 @@
-<h1>Welcome <?= $_SESSION['username'] ?></h1>
+<h1>Welcome <?= htmlspecialchars($_SESSION['username']) ?></h1>
