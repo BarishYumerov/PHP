@@ -25,7 +25,7 @@ class BaseController
         $this->onLoad();
     }
 
-    protected function onLoad() { }
+    protected function onLoad() {}
 
     public function redirect(
         $controller = null,
@@ -51,5 +51,21 @@ class BaseController
         }
         header("Location: " . $url);
         exit;
+    }
+
+    public function checkToken(){
+        $actualToken = $_SESSION['token'];
+        $uri = 'localhost/' . $_SERVER['REQUEST_URI'];
+
+        $c = curl_init($uri);
+        curl_setopt($c, CURLOPT_RETURNTRANSFER, true);
+        $html = curl_exec($c);
+        $pattern = '/value="(.*)"/';
+        preg_match($pattern, $html, $matches);
+        $tokenValue = intval($matches[1]);
+        if($tokenValue != $actualToken){
+            echo 'Invalid Token!';
+            die;
+        }
     }
 }

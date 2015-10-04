@@ -13,6 +13,10 @@ class ProductsController extends BaseController
     private $productRepository;
 
     protected function onLoad(){
+        $token = time();
+        $_SESSION['token'] = $token;
+        echo '<form method="post"><input id="token" type="hidden" name="token" value="' . $token . '"></form>';
+
         if(!isset($_SESSION['username'])){
             $this->redirect('users', 'login');
         }
@@ -29,6 +33,7 @@ class ProductsController extends BaseController
     }
 
     public function available(){
+        $this->checkToken();
         $_SESSION['products'] = $this->productRepository->available();
         if(isset($_POST['buy'])){
             $productId = intval(array_shift($_POST));
@@ -37,6 +42,8 @@ class ProductsController extends BaseController
     }
 
     public function category(){
+        $this->checkToken();
+
         $_SESSION['products'] = [];
         $_SESSION['categories'] = CategoriesRepository::create()->getAll();
 
@@ -59,6 +66,8 @@ class ProductsController extends BaseController
     }
 
     public function add(){
+        $this->checkToken();
+
         if($_SESSION['roleId'] < 2){
             $this->redirect('users', 'usersHome');
         }
@@ -80,6 +89,8 @@ class ProductsController extends BaseController
     }
 
     public function edit(){
+        $this->checkToken();
+
         if($_SESSION['roleId'] < 2){
             $this->redirect('users', 'usersHome');
         }
@@ -107,6 +118,8 @@ class ProductsController extends BaseController
     }
 
     public function myProducts(){
+        $this->checkToken();
+
         $_SESSION['products'] = $this->productRepository->getMyProducts($_SESSION['userId']);
         if(isset($_POST['edit'])){
             reset($_POST);
@@ -123,6 +136,8 @@ class ProductsController extends BaseController
     }
 
     public function buy(){
+        $this->checkToken();
+
         $product = $this->productRepository->getProduct($this->parameters[0]);
         $_SESSION['product'] = $product;
         $cart = CartRepository::create()->getUserCard($_SESSION['userId']);

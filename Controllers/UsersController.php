@@ -9,6 +9,11 @@ use Repositories\UserRepository;
 class UsersController extends BaseController
 {
     protected function onLoad(){
+
+        $token = time();
+        $_SESSION['token'] = $token;
+        echo '<form method="post"><input id="token" type="hidden" name="token" value="' . $token . '"></form>';
+
         if(isset($_SESSION['username'])){
             if($_SESSION['roleId'] == 1){
                 $this->redirect('home', 'userHome');
@@ -73,6 +78,7 @@ class UsersController extends BaseController
     }
 
     public function login(){
+
         if(isset($_POST['register'])){
             $this->redirect('users', 'register');
             exit;

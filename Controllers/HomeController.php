@@ -9,6 +9,10 @@ class HomeController extends BaseController
     private $loggedUser = null;
 
     protected function onLoad(){
+        $token = time();
+        $_SESSION['token'] = $token;
+        echo '<form method="post"><input id="token" type="hidden" name="token" value="' . $token . '"></form>';
+
         $uriParts = explode('/', $_SERVER['REQUEST_URI']);
         $action = $uriParts[count($uriParts) - 1];
         if(!isset($_SESSION['userId']) && $action != 'guestHome'){
@@ -39,6 +43,7 @@ class HomeController extends BaseController
     }
 
     public function editorHome(){
+
         if(!isset($_SESSION['username'])){
             $this->redirect('users', 'login');
             exit;

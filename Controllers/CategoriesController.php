@@ -8,6 +8,10 @@ use Models\Category;
 class CategoriesController extends BaseController
 {
     protected function onLoad(){
+        $token = time();
+        $_SESSION['token'] = $token;
+        echo '<form method="post"><input id="token" type="hidden" name="token" value="' . $token . '"></form>';
+
         if(!isset($_SESSION['username'])){
             $this->redirect('users', 'login');
         }
@@ -18,6 +22,7 @@ class CategoriesController extends BaseController
     }
 
     function edit(){
+        $this->checkToken();
         if(isset($_POST['changeName'])){
             if($_POST['categoryName'] == null){
                 echo 'Enter name!';
@@ -31,6 +36,7 @@ class CategoriesController extends BaseController
     }
 
     function add(){
+        $this->checkToken();
         if(isset($_POST['add'])){
             if($_POST['categoryName'] == null){
                 echo 'Enter name!';
