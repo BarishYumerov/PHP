@@ -64,6 +64,7 @@ class UsersController extends BaseController
             $user->save();
             $userInstance = UserRepository::create()->getByName($username);
             $newUserId = intval($userInstance['id']);
+            var_dump($userInstance);
             if($userInstance){
                 CartRepository::create()->newCart($newUserId);
             }

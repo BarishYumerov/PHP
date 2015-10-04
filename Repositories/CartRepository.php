@@ -84,11 +84,13 @@ class CartRepository
     public function emptyCart(){
         $cartId = intval($_SESSION['userCart']['id']);
         $products = $_SESSION['userCart']['cartProducts'];
+
         foreach($products as $key => $value){
             $query = "UPDATE products set quantity = quantity + ?
                   WHERE id = ?";
             $this->db->query($query, [floatval($value['quantity']), floatval($value['productId'])]);
         }
+
         $query = "UPDATE carts set value = 0
                   WHERE id = ?";
         $this->db->query($query, [$cartId]);
@@ -96,5 +98,24 @@ class CartRepository
         $query = "DELETE FROM cartsproducts
                   WHERE cartId = ?";
         $this->db->query($query, [$cartId]);
+    }
+
+    public function remove(){
+        $cartId = intval($_SESSION['userCart']['id']);
+        $productId = intval($_POST['productId']);
+        $quantity = floatval($_POST['quantity']);
+        $price = floatval($_POST['price']);
+        $id = intval($_POST['id']);
+        $query = "UPDATE products set quantity = quantity + ?
+                  WHERE id = ?";
+        $this->db->query($query, [$quantity, $productId]);
+
+        $query = "UPDATE carts set value = value - ?
+                  WHERE id = ?";
+        $this->db->query($query, [$price * $quantity, $cartId]);
+
+        $query = "DELETE FROM cartsproducts
+                  WHERE id = ?";
+        $this->db->query($query, [$id]);
     }
 }

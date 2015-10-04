@@ -33,5 +33,10 @@ class CartController extends BaseController
             CartRepository::create()->emptyCart();
             $this->redirect('cart', 'manage');
         }
+
+        if(isset($_POST['remove'])){
+            CartRepository::create()->remove();
+            $this->redirect('cart', 'manage');
+        }
     }
 }
